@@ -28,9 +28,9 @@ do_series <- function(st_df, last_date) {
     
     hchart(aaa, type = "columnrange",
            hcaes(x = obsdate, low = lower, high = upper, color = median)) %>% 
-        hc_yAxis(title=list(text="Weekly claims"),
+        hc_yAxis(title=list(text="Number"),
                  tickPositions = seq(0, ymax, 5.0e5),
-            gridLineColor = "#B71C1C",
+            # gridLineColor = "#B71C1C",
             labels = list(format = "{value}", useHTML = TRUE)) %>% 
         hc_tooltip(
             useHTML = TRUE,
