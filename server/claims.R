@@ -19,8 +19,7 @@ do_series <- function(st_df, last_date) {
     colnames(aaa) <- c("obsdate", "lower", "median", "upper")
     ymax = max(aaa[, upper])
     
-    chart_title = paste0("Weekly Claims: ")
-    chart_subtitle = paste0("Data as of: ",  last_date)
+    chart_title = paste0("Weekly Claims, Data as of: ", last_date)
     
     x <- c("Min: ", "Mean: ", "Max: ")
     y <- sprintf("{point.%s: .0f}", c("lower", "median", "upper"))
@@ -39,7 +38,6 @@ do_series <- function(st_df, last_date) {
         ) %>% 
         hc_xAxis(title=list(text="Date")) %>%
         hc_add_theme(hc_theme_ft()) %>%
-        hc_title(text = chart_title) %>%
-        hc_subtitle(text = chart_subtitle)
+        hc_title(text = chart_title) 
 }
     
